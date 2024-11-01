@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    height: fit-content;
+    border-bottom: 1px solid #c4c4c4;
+}
+header > img {
+    width: 5rem;
+    height: 2.5rem;
+    object-fit: cover;
+}
+
+header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #383838;
+}
+
+header .hamburger {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    color: #383838;
+    cursor: pointer;
+    display: none;
+}
+
+header .sideBar {
+    position: fixed;
+    background-color: white;
+    border: 1px solid #c4c4c4;
+    top: 0;
+    right: -210px;
+    height: 100vh;
+    padding: 1rem;
+    display: none;
+    transition: right .3s;
+}
+header .sideBar nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 650px) {
+    header > input, header > nav {
+        display: none;
+    }
+    header .hamburger, header .sideBar {
+        display: block;
+    }
+    header .hamburger:hover + .sideBar, .sideBar:hover {
+        right: 0;
+    }
+}
